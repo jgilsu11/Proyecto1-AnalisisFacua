@@ -1,5 +1,8 @@
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib_inline
+import seaborn as sns
 
 def sacar_tabla(tabla_indiv, mercado, producto, variante):
     tr_tabla=tabla_indiv.findAll("tr")
@@ -33,3 +36,44 @@ def añadir_id_mapeado(Df_diccionario, Columnadicc_nombre, Columnadicc_id, Colum
 
     Df_donde_mapear.drop(columns=Columna_a_mapear, inplace=True)
     return Df_donde_mapear
+
+
+def datos_grafico_comparacion_max_min(ejex,ejey,hue,data,pallete,categoria_producto,distancia_datalabel):  
+    fig, axes = plt.subplots(nrows = 1, ncols = 2, figsize = (20, 5), sharex=True, sharey=True)
+    sns.boxplot(x= ejex, y= ejey, hue= hue, data=data, palette= pallete, ax = axes[0], capprops={'color':'purple'}) # para cambiar el color de los bigotes
+    axes[0].set_title(f"Distribución del precio de la {categoria_producto} en distintos supermercados hoy")
+    axes[0].set_xlabel("Supermercados")
+    axes[0].set_ylabel("Precio")
+
+    sns.barplot(x= ejex, y= ejey, hue= hue, data=data, palette= pallete, ax = axes[1])
+    axes[1].set_title(f"Precio Medio de la {categoria_producto} por supermercado hoy")
+    axes[1].set_xlabel("Supermercados")
+    axes[1].set_ylabel("Precio Medio")
+    for container in axes[1].containers:
+        axes[1].bar_label(container, fmt="%.2f",  padding=distancia_datalabel) 
+
+
+
+def datos_grafico_comparacion_max_minhist(ejex,ejey,hue,data,pallete,categoria_producto,distancia_datalabel):  
+    fig, axes = plt.subplots(nrows = 1, ncols = 2, figsize = (20, 5), sharex=True, sharey=True)
+    sns.boxplot(x= ejex, y= ejey, hue= hue, data=data, palette= pallete, ax = axes[0], capprops={'color':'purple'}) # para cambiar el color de los bigotes
+    axes[0].set_title(f"Distribución del precio de la {categoria_producto} en distintos supermercados historico")
+    axes[0].set_xlabel("Supermercados")
+    axes[0].set_ylabel("Precio")
+
+    sns.barplot(x= ejex, y= ejey, hue= hue, data=data, palette= pallete, ax = axes[1])
+    axes[1].set_title(f"Precio Medio de la {categoria_producto} por supermercado historico")
+    axes[1].set_xlabel("Supermercados")
+    axes[1].set_ylabel("Precio Medio")
+    for container in axes[1].containers:
+        axes[1].bar_label(container, fmt="%.2f",  padding=distancia_datalabel) 
+
+
+
+
+def grafico_evolucion_variacion_acumulada(ejex,ejey,hue,data,categoria_producto):
+    plt.figure(figsize=(20,10))
+    sns.lineplot(x= ejex, y= ejey, hue= hue, data=data, marker="x", linewidth = 1,palette="bright", style_order=data[1])
+    plt.title(f"Evolución de la Variación acumulada del precio de la {categoria_producto} por supermercado")
+    plt.xlabel("Tiempo")
+    plt.ylabel(f"Variación del precio de la {categoria_producto}")        
