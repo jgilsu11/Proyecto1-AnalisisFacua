@@ -1,7 +1,5 @@
 # Proyecto1-AnalisisFacua
 
-![Análisis de precios en los principales supermercados de España](https://github.com/jgilsu11/Proyecto4-AnalisisFacua/blob/main/DALL%C2%B7E%202024-10-27%2018.56.25%20-%20A%20modern%20and%20visually%20appealing%20cover%20image%20for%20a%20README%20file%20on%20a%20project%20analyzing%20price%20variations%20in%20Spanish%20supermarkets.%20The%20image%20should%20includ.webp)
-
 **Análisis de precios en los principales supermercados de España**
 
 
