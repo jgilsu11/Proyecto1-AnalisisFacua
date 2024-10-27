@@ -77,3 +77,22 @@ def grafico_evolucion_variacion_acumulada(ejex,ejey,hue,data,categoria_producto)
     plt.title(f"Evolución de la Variación acumulada del precio de la {categoria_producto} por supermercado")
     plt.xlabel("Tiempo")
     plt.ylabel(f"Variación del precio de la {categoria_producto}")        
+
+
+
+
+def grafico_evol_precio_medio(ejex,ejey,hue,data,categoria_producto):  
+    plt.figure(figsize=(20,10))
+    sns.lineplot(x= ejex, y= ejey, hue= hue, data=data, marker="D", linewidth = 1,palette="bright", style_order=data[1])
+    plt.title(f"Evolución de los precios medios de la {categoria_producto} por supermercado")
+    plt.xlabel("Tiempo")
+    plt.ylabel(f" Precio medio de la {categoria_producto}")  
+
+
+
+def grafica_anomalias(ejex,ejey,hue,data,categoria_producto):
+    plt.figure(figsize=(20,10))
+    sns.lineplot(x= ejex, y= ejey, hue= hue, data=data, marker="D", linewidth = 1,palette="bright", style_order=data[1])
+    plt.title(f"Evolución de las Anomalias de la variacion del precio de {categoria_producto} por supermercado")
+    plt.xlabel("Tiempo")
+    plt.ylabel(f"Variación del precio de {categoria_producto}")   
