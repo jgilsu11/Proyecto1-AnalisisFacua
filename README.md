@@ -26,10 +26,10 @@ El desarrollo del proyecto se gestionó de la siguiente manera:
 
 Por todo lo anterior, el usuario tiene acceso a:
 
-        ├── notebooks/           # Notebooks de Jupyter 
-        ├── src/                 # Scripts (.py)
-        ├── README.md            # Descripción del proyecto
-        ├── Presentación         # Presentación del proyecto  
+        ├── notebooks/                                   # Notebooks de Jupyter 
+        ├── src/                                         # Scripts (.py)
+        ├── README.md                                    # Descripción del proyecto
+        ├── Proyecto 4 Análisis de precios supers        # Presentación del proyecto  
         
 ***Requisitos e Instalación🛠️:***
 
